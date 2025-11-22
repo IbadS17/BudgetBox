@@ -1,6 +1,6 @@
 import { useBudgetStore } from "./store/budgetStore";
 
-const BACKEND_URL = "http://localhost:4000";
+const BACKEND_URL = "https://budgetbox-3hjg.onrender.com";
 
 // Helper to get logged-in email (or default seed user)
 function getEmail() {
