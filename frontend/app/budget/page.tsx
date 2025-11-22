@@ -1,8 +1,8 @@
 "use client";
 
 import { useMemo } from "react";
-import { useBudgetStore } from "@/app/lib/store/budgetStore";
-import type { Budget } from "@/app/lib/store/budgetStore";
+import { useBudgetStore } from "../lib/store/budgetStore";
+import { Budget } from "../lib/store/budgetStore";
 
 const fields: { key: keyof Budget; label: string; hint: string }[] = [
   { key: "income", label: "Income", hint: "Total monthly take-home" },

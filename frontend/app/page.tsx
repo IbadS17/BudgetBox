@@ -1,8 +1,8 @@
 "use client";
 
-import { useBudgetStore } from "@/app/lib/store/budgetStore";
 import { Pie } from "react-chartjs-2";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
+import { useBudgetStore } from "./lib/store/budgetStore";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
