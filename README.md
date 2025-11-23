@@ -2,8 +2,9 @@
 
 ## 🚀 Live Demo
 
-Frontend: <YOUR VERCEL URL>  
-Backend: <YOUR RAILWAY / RENDER URL>
+Frontend: [Vercel](https://budget-box-five.vercel.app/)
+
+Backend: [RENDER URL](https://budgetbox-3hjg.onrender.com/)
 
 ---
 
@@ -148,16 +149,33 @@ pnpm install
 pnpm dev
 ```
 
-### Database Setup (PostgreSQL)
-
+## Database Setup (PostgreSQL)
+### Create Database 
 ```
 CREATE DATABASE budgetbox;
+```
+### Create User Tabe
+```
+CREATE TABLE IF NOT EXISTS users (
+    id SERIAL PRIMARY KEY,
+    email TEXT UNIQUE NOT NULL,
+    password TEXT NOT NULL
+);
+```
+### Insert Demo user
+```
+INSERT INTO users (email, password)
+VALUES ('hire-me@anshumat.org', 'HireMe@2025!')
+ON CONFLICT (email) DO NOTHING;
+```
 
-CREATE TABLE budgets (
-id SERIAL PRIMARY KEY,
-user_email TEXT,
-payload JSONB,
-updated_at TIMESTAMP DEFAULT NOW()
+### Create budget table
+```
+CREATE TABLE IF NOT EXISTS budgets (
+    id SERIAL PRIMARY KEY,
+    user_email TEXT,
+    payload JSONB,
+    updated_at TIMESTAMP DEFAULT NOW()
 );
 ```
 
